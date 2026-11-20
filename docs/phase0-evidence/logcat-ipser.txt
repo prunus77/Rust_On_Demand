@@ -1,0 +1,4 @@
+11-20 14:26:21.818  5982  6021 I ipser   : hello_egui: IPSER_START hello-egui
+11-20 14:26:31.168  5982  6021 I ipser   : hello_egui: IPSER_TAP count=1
+11-20 14:26:31.833  5982  6021 I ipser   : hello_egui: IPSER_TAP count=2
+11-20 14:26:32.501  5982  6021 I ipser   : hello_egui: IPSER_TAP count=3
