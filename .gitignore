@@ -1,0 +1,11 @@
+# Toolchain image (tens of GB) lives next to the repo, never in it
+toolchain.sparsebundle/
+# macOS metadata files that exFAT creates beside every file
+._*
+.DS_Store
+# Build output and run folders
+target/
+runs/
+# Secrets
+.env
+*.keystore
