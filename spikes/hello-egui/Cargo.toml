@@ -1,0 +1,32 @@
+[package]
+name = "hello-egui"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+eframe = { version = "0.37.0", default-features = false, features = ["glow", "android-native-activity", "default_fonts"] }
+log = "0.4.35"
+
+[target.'cfg(target_os = "android")'.dependencies]
+android_logger = "0.15.1"
+winit = { version = "0.30.13", features = ["android-native-activity"] }
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[package.metadata.android]
+package = "com.ipser.hello"
+build_targets = ["aarch64-linux-android", "armv7-linux-androideabi"]
+
+[package.metadata.android.sdk]
+min_sdk_version = 21
+target_sdk_version = 35
+
+[package.metadata.android.application]
+label = "Ipser Hello"
+
+[package.metadata.android.application.activity]
+# Handle every config change in-process. If Android relaunches a NativeActivity,
+# the Java side waits on the Rust thread in onDestroy and the app deadlocks (seen in Phase 0).
+config_changes = "orientation|screenSize|smallestScreenSize|screenLayout|keyboard|keyboardHidden|navigation|density|uiMode|fontScale|locale|layoutDirection|colorMode|touchscreen"
+launch_mode = "singleTask"
